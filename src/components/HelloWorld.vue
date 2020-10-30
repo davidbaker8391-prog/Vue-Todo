@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import TodoForm from './TodoForm/TodoForm';
+import TodoForm from './TodoForm/TodoForm.vue';
 
 export default {
   name: 'HelloWorld',
