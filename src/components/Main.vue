@@ -10,7 +10,7 @@
 import TodoForm from './TodoForm/TodoForm.vue';
 
 export default {
-  name: 'HelloWorld',
+  name: 'Main',
   components: {
     TodoForm,
   },
