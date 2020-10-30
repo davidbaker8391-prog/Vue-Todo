@@ -1,14 +1,22 @@
 <template>
-  <HelloWorld msg="Test Todo" />
+  <div>
+    <Header />
+    <Main v-bind="$attrs" />
+    <Footer />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import Header from './components/Layout/Header.vue';
+import Main from './components/Main.vue';
+import Footer from './components/Layout/Footer.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
+    Header,
+    Main,
+    Footer,
   },
 };
 </script>
