@@ -10,10 +10,10 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "tailwindcss": "^1.9.6",
-    "vue": "^3.0.0"
+    "vue": "^3.0.0",
+    "autoprefixer": "^9.8.6"
   },
-  "devDependencies": {
-    "autoprefixer": "^9.8.6",
+  "devDependencies": {   
     "postcss-cli": "^8.1.0",
     "@vue/cli-plugin-babel": "~4.5.8",
     "@vue/cli-plugin-eslint": "~4.5.8",
