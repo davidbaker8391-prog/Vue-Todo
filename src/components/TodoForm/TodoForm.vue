@@ -26,7 +26,6 @@
                   >
                     Complete
                   </button>
-
                   <button
                     title="Uncomplete TODO"
                     v-show="todo.done"
@@ -38,12 +37,11 @@
               </transition>
             </div>
           </div>
-
           <div class="col-span-6">
             <div class="p-8 bg-white rounded shadow-lg">
               <h2 class="text-xl">Add TODO</h2>
               <input type="text" v-model="state.todoText" />
-              <button @click="addTodo">Add</button>
+              <button class="block w-full" @click="addTodo">Add</button>
             </div>
           </div>
         </div>
