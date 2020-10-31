@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto">
+  <div class="container p-4 mx-auto">
     <h1>Main page</h1>
     <main>
       Click <router-link to="/todos" class="router-link">Todos</router-link> to
@@ -13,9 +13,3 @@ export default {
   name: 'Main',
 };
 </script>
-
-<style lang="postcss" scoped>
-main {
-  @apply pt-4 pb-4 text-xl text-center;
-}
-</style>
