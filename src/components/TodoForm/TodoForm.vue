@@ -14,7 +14,11 @@
               <transition appear name="fade">
                 <div>
                   <div>{{ todo.name }}</div>
+                </div>
+              </transition>
 
+              <transition appear name="fade">
+                <div class="space-x-2">
                   <button v-show="!todo.done" @click="toggleDone(index)">
                     Complete
                   </button>
@@ -82,7 +86,7 @@ input {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 1.0s ease;
+  transition: opacity 1s ease;
 }
 
 .fade-enter-from,
