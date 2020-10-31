@@ -13,11 +13,12 @@
 </template>
 
 <script>
-export default {
+import { defineComponent } from 'vue';
+
+export default defineComponent({
   name: 'Header',
   methods: {
     test() {
-      // return 'This is test value from method in TodoForm';
       this.testText = 'Endret tekst fra test';
     },
   },
@@ -26,7 +27,7 @@ export default {
       testText: 'Teeest',
     };
   },
-};
+});
 </script>
 
 <style lang="postcss" scoped>
