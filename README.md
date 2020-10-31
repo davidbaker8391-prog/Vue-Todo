@@ -3,6 +3,9 @@
 ## Features
 
 - Vue router
-- Vuex
-- GSAP
+- Animations
 - Tailwind CSS
+
+## TODO
+
+- Vuex?
