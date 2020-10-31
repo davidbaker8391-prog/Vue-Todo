@@ -54,7 +54,7 @@ export default defineComponent({
 
 <style lang="postcss" scoped>
 button {
-  @apply px-4 py-2 font-bold text-white bg-blue-500 rounded;
+  @apply mt-4 px-4 py-2 font-bold text-white bg-blue-500 rounded;
 }
 
 button:hover {
