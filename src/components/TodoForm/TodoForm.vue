@@ -1,11 +1,8 @@
 <template>
-  <div class="todoform">
-    <h1>This text comes from TodoForm</h1>
+  <div class="container mx-auto">
+    <h1>This text comes from TodoForm.vue</h1>
     <h2>{{ testText }}</h2>
-    <button
-      type="button"
-      class="button"
-    >
+    <button type="button" class="button">
       Button
     </button>
   </div>
@@ -16,7 +13,6 @@ export default {
   name: 'TodoForm',
   methods: {
     test() {
-      // return 'This is test value from method in TodoForm';
       this.testText = 'Endret tekst fra test';
     },
   },
@@ -29,11 +25,11 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.button {
+button {
   @apply px-4 py-2 font-bold text-white bg-blue-500 rounded;
 }
 
-.button:hover {
+button:hover {
   @apply bg-blue-700;
 }
 </style>
