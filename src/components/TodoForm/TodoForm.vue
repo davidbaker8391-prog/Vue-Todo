@@ -20,8 +20,8 @@
           <div class="col-span-6">
             <div class="p-8 bg-white rounded shadow-lg">
               <h2 class="text-xl">Add TODO</h2>
-              <input type="text" class="w-full p-2 mt-4 border rounded" />
-              <button @click="addTodo">Test</button>
+              <input type="text" v-model="state.todoText" />
+              <button @click="addTodo">Add</button>
             </div>
           </div>
         </div>
@@ -41,7 +41,7 @@ export default defineComponent({
     });
 
     const addTodo = () => {
-      state.todos.push({ name: 'Test', done: false });
+      state.todos.push({ name: state.todoText, done: false });
     };
 
     return {
@@ -59,5 +59,9 @@ button {
 
 button:hover {
   @apply bg-blue-700;
+}
+
+input {
+  @apply w-full p-2 mt-4 border rounded;
 }
 </style>
