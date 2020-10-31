@@ -21,6 +21,11 @@ export default {
 <style src="./assets/css/tailwind.css"></style>
 
 <style lang="postcss">
+
+/*
+Common styles for all components (not scoped)
+*/
+
 h1 {
   @apply pt-4 pb-4 text-4xl font-bold text-center;
 }
