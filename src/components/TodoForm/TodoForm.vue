@@ -4,7 +4,7 @@
     <h2>{{ testText }}</h2>
     <button
       type="button"
-      class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
+      class="button"
     >
       Button
     </button>
@@ -27,3 +27,13 @@ export default {
   },
 };
 </script>
+
+<style lang="postcss" scoped>
+.button {
+  @apply px-4 py-2 font-bold text-white bg-blue-500 rounded;
+}
+
+.button:hover {
+  @apply bg-blue-700;
+}
+</style>
