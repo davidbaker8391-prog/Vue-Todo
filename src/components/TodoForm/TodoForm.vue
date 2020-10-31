@@ -19,11 +19,19 @@
 
               <transition appear name="fade">
                 <div class="space-x-2">
-                  <button v-show="!todo.done" @click="toggleDone(index)">
+                  <button
+                    title="Complete TODO"
+                    v-show="!todo.done"
+                    @click="toggleDone(index)"
+                  >
                     Complete
                   </button>
 
-                  <button v-show="todo.done" @click="toggleDone(index)">
+                  <button
+                    title="Uncomplete TODO"
+                    v-show="todo.done"
+                    @click="toggleDone(index)"
+                  >
                     Uncomplete
                   </button>
                 </div>
