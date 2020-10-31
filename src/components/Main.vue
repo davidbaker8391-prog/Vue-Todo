@@ -1,26 +1,15 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>{{ testing }}</h2>
-    <TodoForm />
+  <div class="container p-4 mx-auto">
+    <h1>Main page</h1>
+    <main>
+      Click <router-link to="/todos" class="router-link">Todos</router-link> to
+      get started
+    </main>
   </div>
 </template>
 
 <script>
-import TodoForm from './TodoForm/TodoForm.vue';
-
 export default {
   name: 'Main',
-  components: {
-    TodoForm,
-  },
-  computed: {
-    testing() {
-      return 'This value is computed';
-    },
-  },
-  props: {
-    msg: String,
-  },
 };
 </script>
