@@ -3,7 +3,13 @@
     <h1>TODO</h1>
     <main>
       <div class="mt-3">
-        <div class="grid grid-cols-12 gap-4">
+        <div
+          class="grid gap-4"
+          :class="{
+            'grid-cols-12': state.todos.length !== 0,
+            'grid-cols-6': state.todos.length === 0,
+          }"
+        >
           <div class="col-span-6 px-1 space-y-4 overflow-y-auto">
             <div
               v-for="(todo, index) in state.todos"
