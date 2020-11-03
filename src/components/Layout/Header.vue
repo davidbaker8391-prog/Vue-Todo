@@ -1,12 +1,14 @@
 <template>
   <div>
     <nav class="text-white bg-gray-800">
-      <div class="container mx-auto">
-        <div class="flex items-center">
-          <router-link to="/" class="router-link">Home</router-link>
-          <router-link to="/todos" class="router-link">Todos</router-link>
+      <header>
+        <div class="container mx-auto">
+          <div class="flex items-center">
+            <router-link to="/" class="router-link">Home</router-link>
+            <router-link to="/todos" class="router-link">Todos</router-link>
+          </div>
         </div>
-      </div>
+      </header>
     </nav>
     <router-view />
   </div>
@@ -17,16 +19,6 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'Header',
-  methods: {
-    test() {
-      this.testText = 'Endret tekst fra test';
-    },
-  },
-  data() {
-    return {
-      testText: 'Teeest',
-    };
-  },
 });
 </script>
 

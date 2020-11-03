@@ -2,7 +2,7 @@
   <div class="container p-4 mx-auto">
     <h1>TODO</h1>
     <main>
-      <div class="mt-3">
+      <div class="relative mt-3">
         <div
           class="grid gap-4"
           :class="{
@@ -10,44 +10,55 @@
             'grid-cols-6': state.todos.length === 0,
           }"
         >
-          <div class="col-span-6 px-1 space-y-4 overflow-y-auto">
+          <div class="col-span-6 px-1 space-y-4">
             <div
               v-for="(todo, index) in state.todos"
               :key="index"
-              class="flex items-center justify-between p-8 bg-white rounded shadow-md"
-              :class="{ 'bg-green-200': todo.done }"
+              class="flex items-center justify-between p-4 bg-white rounded shadow-lg"
+              :class="{ 'bg-green-300': todo.done }"
             >
-              <transition appear name="fade">
-                <div>
-                  <div>{{ todo.name }}</div>
-                </div>
-              </transition>
+              <div>
+                <div>{{ todo.name }}</div>
+              </div>
 
-              <transition appear name="fade">
-                <div class="space-x-2">
-                  <button
-                    title="Complete TODO"
-                    v-show="!todo.done"
-                    @click="toggleDone(index)"
-                  >
-                    Complete
-                  </button>
-                  <button
-                    title="Uncomplete TODO"
-                    v-show="todo.done"
-                    @click="toggleDone(index)"
-                  >
-                    Uncomplete
-                  </button>
-                </div>
-              </transition>
+              <div class="space-x-2">
+                <button class="btn-error" @click="deleteTodo">
+                  Delete
+                </button>
+                <button
+                  class="btn-standard"
+                  title="Complete TODO"
+                  v-if="!todo.done"
+                  @click="toggleDone(index)"
+                >
+                  Complete
+                </button>
+
+                <button
+                  class="btn-standard"
+                  title="Uncomplete TODO"
+                  v-else
+                  @click="toggleDone(index)"
+                >
+                  Uncomplete
+                </button>
+              </div>
             </div>
           </div>
+
           <div class="col-span-6">
             <div class="p-8 bg-white rounded shadow-lg">
               <h2 class="text-xl">Add TODO</h2>
               <input type="text" v-model="state.todoText" />
-              <button class="block w-full" @click="addTodo">Add</button>
+              <button class="block w-full btn-standard" @click="addTodo">
+                Add
+              </button>
+              <p
+                class="p-4 text-3xl text-red-500"
+                v-if="state.errorMessage !== ''"
+              >
+                {{ state.errorMessage }}
+              </p>
             </div>
           </div>
         </div>
@@ -64,20 +75,31 @@ export default defineComponent({
     const state = reactive({
       todos: [],
       todoText: '',
+      errorMessage: '',
     });
 
-    const addTodo = () => {
-      state.todos.push({ name: state.todoText, done: false });
-    };
+    function addTodo() {
+      if (state.todoText === '') {
+        state.errorMessage = 'Text needs to be longer!';
+      } else {
+        state.errorMessage = '';
+        state.todos.push({ name: state.todoText, done: false });
+      }
+    }
 
-    const toggleDone = (index) => {
+    function toggleDone(index) {
       state.todos[index].done = !state.todos[index].done;
-    };
+    }
+
+    function deleteTodo(index) {
+      state.todos.splice(index, 1);
+    }
 
     return {
       state,
       addTodo,
       toggleDone,
+      deleteTodo,
     };
   },
 });
@@ -85,24 +107,25 @@ export default defineComponent({
 
 <style lang="postcss" scoped>
 button {
-  @apply mt-4 px-4 py-2 font-bold text-white bg-blue-500 rounded;
+  @apply mt-4 px-4 py-2 font-bold text-white rounded;
 }
 
-button:hover {
+.btn-standard {
+  @apply bg-blue-500;
+}
+.btn-error {
+  @apply bg-red-500;
+}
+
+.btn-standard:hover {
   @apply bg-blue-700;
+}
+
+.btn-error:hover {
+  @apply bg-red-700;
 }
 
 input {
   @apply w-full p-2 mt-4 border rounded;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 1s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
 }
 </style>
