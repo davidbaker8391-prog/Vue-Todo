@@ -13,5 +13,6 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'Main',
+  title: 'Page title',
 });
 </script>

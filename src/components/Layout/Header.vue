@@ -19,6 +19,11 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'Header',
+  watch: {
+    $route(to) {
+      document.title = to.meta.title || 'Your Website';
+    },
+  },
 });
 </script>
 
