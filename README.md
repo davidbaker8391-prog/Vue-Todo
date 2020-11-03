@@ -3,9 +3,5 @@
 ## Features
 
 - Vue router
-- Animations
+- Eslint with Airbnb
 - Tailwind CSS
-
-## TODO
-
-- Vuex?
