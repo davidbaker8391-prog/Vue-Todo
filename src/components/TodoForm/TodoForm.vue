@@ -2,7 +2,7 @@
   <div class="container p-4 mx-auto">
     <h1>TODO</h1>
     <main>
-      <div class="mt-3">
+      <div class="relative mt-3">
         <div
           class="grid gap-4"
           :class="{
@@ -11,41 +11,48 @@
           }"
         >
           <div class="col-span-6 px-1 space-y-4">
-            <transition-group name="mode-fade" mode="out-in">
-              <div
-                v-for="(todo, index) in state.todos"
-                :key="index"
-                class="flex items-center justify-between p-4 bg-white rounded shadow-lg"
-                :class="{ 'bg-green-200': todo.done }"
-              >
-                <div>
-                  <div>{{ todo.name }}</div>
-                </div>
-
-                <div class="space-x-2">
-                  <button
-                    title="Complete TODO"
-                    v-if="!todo.done"
-                    @click="toggleDone(index)"
-                  >
-                    Complete
-                  </button>
-                  <button
-                    title="Uncomplete TODO"
-                    v-else
-                    @click="toggleDone(index)"
-                  >
-                    Uncomplete
-                  </button>
-                </div>
+            <div
+              v-for="(todo, index) in state.todos"
+              :key="index"
+              class="flex items-center justify-between p-4 bg-white rounded shadow-lg"
+              :class="{ 'bg-green-300': todo.done }"
+            >
+              <div>
+                <div>{{ todo.name }}</div>
               </div>
-            </transition-group>
+
+              <div class="space-x-2">
+                <button class="btn-error" @click="deleteTodo">
+                  Delete
+                </button>
+                <button
+                  class="btn-standard"
+                  title="Complete TODO"
+                  v-if="!todo.done"
+                  @click="toggleDone(index)"
+                >
+                  Complete
+                </button>
+
+                <button
+                  class="btn-standard"
+                  title="Uncomplete TODO"
+                  v-else
+                  @click="toggleDone(index)"
+                >
+                  Uncomplete
+                </button>
+              </div>
+            </div>
           </div>
+
           <div class="col-span-6">
             <div class="p-8 bg-white rounded shadow-lg">
               <h2 class="text-xl">Add TODO</h2>
               <input type="text" v-model="state.todoText" />
-              <button class="block w-full" @click="addTodo">Add</button>
+              <button class="block w-full btn-standard" @click="addTodo">
+                Add
+              </button>
               <p
                 class="p-4 text-3xl text-red-500"
                 v-if="state.errorMessage !== ''"
@@ -84,10 +91,15 @@ export default defineComponent({
       state.todos[index].done = !state.todos[index].done;
     }
 
+    function deleteTodo(index) {
+      state.todos.splice(index, 1);
+    }
+
     return {
       state,
       addTodo,
       toggleDone,
+      deleteTodo,
     };
   },
 });
@@ -95,24 +107,25 @@ export default defineComponent({
 
 <style lang="postcss" scoped>
 button {
-  @apply mt-4 px-4 py-2 font-bold text-white bg-blue-500 rounded;
+  @apply mt-4 px-4 py-2 font-bold text-white rounded;
 }
 
-button:hover {
+.btn-standard {
+  @apply bg-blue-500;
+}
+.btn-error {
+  @apply bg-red-500;
+}
+
+.btn-standard:hover {
   @apply bg-blue-700;
+}
+
+.btn-error:hover {
+  @apply bg-red-700;
 }
 
 input {
   @apply w-full p-2 mt-4 border rounded;
-}
-
-.mode-fade-enter-active,
-.mode-fade-leave-active {
-  transition: opacity 2s ease;
-}
-
-.mode-fade-enter-from,
-.mode-fade-leave-to {
-  opacity: 0;
 }
 </style>

@@ -1,19 +1,14 @@
 <template>
-  <div>
-    <Header />
-    <Footer />
-  </div>
+  <Header />
 </template>
 
 <script>
 import Header from './components/Layout/Header.vue';
-import Footer from './components/Layout/Footer.vue';
 
 export default {
   name: 'App',
   components: {
     Header,
-    Footer,
   },
 };
 </script>
@@ -21,7 +16,6 @@ export default {
 <style src="./assets/css/tailwind.css"></style>
 
 <style lang="postcss">
-
 /*
 Common styles for all components (not scoped)
 */
