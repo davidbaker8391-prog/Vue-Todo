@@ -9,11 +9,17 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
+    meta: {
+      title: 'Home',
+    },
   },
   {
     path: '/todos',
     name: 'Todos',
     component: TodoForm,
+    meta: {
+      title: 'Todos',
+    },
   },
   {
     path: '/:catchAll(.*)',
