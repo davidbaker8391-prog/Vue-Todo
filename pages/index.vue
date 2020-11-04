@@ -10,6 +10,7 @@
 </template>
 
 <script lang="ts">
+// https://typescript.nuxtjs.org/guide/setup.html#installation
 import Vue from 'vue'
 
 export default Vue.extend({})
