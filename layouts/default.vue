@@ -1,55 +1,52 @@
 <template>
   <div>
-    <Nuxt />
+    <nav class="text-white bg-gray-800">
+      <header>
+        <div class="container mx-auto">
+          <div class="flex items-center">
+            <router-link to="/" class="router-link">Home</router-link>
+            <router-link to="/todos" class="router-link">Todos</router-link>
+          </div>
+        </div>
+      </header>
+    </nav>
+    <router-view />
   </div>
 </template>
 
-<style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+<script lang="ts">
+// import defineComponent from 'vue'
+import Vue, { PropOptions } from 'vue'
+
+// export default new defineComponent({
+export default Vue.extend({
+  name: 'Header',
+  watch: {
+    $route(to) {
+      document.title = to.meta.title || 'Your Website'
+    },
+  },
+})
+</script>
+
+<style lang="postcss">
+.router-link {
+  @apply inline-block px-16 py-4 transition-colors duration-500 cursor-pointer;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
+.router-link:hover {
+  @apply bg-gray-500;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+
+/*
+Common styles for all components (not scoped)
+*/
+h1 {
+  @apply pt-4 pb-4 text-4xl font-bold text-center;
+}
+main {
+  @apply text-lg text-center;
 }
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
-}
 </style>
