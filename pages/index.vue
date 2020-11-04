@@ -1,25 +1,9 @@
 <template>
   <div class="container">
     <div>
-      <Logo />
-      <h1 class="title">nuxt-todo</h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+      <h1 class="title">TODO</h1>
+      <div class="bg-red-700 links">
+        <NuxtLink to="/todos">TODOs page</NuxtLink>
       </div>
     </div>
   </div>
@@ -32,11 +16,6 @@ export default Vue.extend({})
 </script>
 
 <style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
 .container {
   margin: 0 auto;
   min-height: 100vh;
