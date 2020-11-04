@@ -15,10 +15,8 @@
 </template>
 
 <script lang="ts">
-// import defineComponent from 'vue'
-import Vue, { PropOptions } from 'vue'
+import Vue from 'vue'
 
-// export default new defineComponent({
 export default Vue.extend({
   name: 'Header',
   watch: {
@@ -30,6 +28,10 @@ export default Vue.extend({
 </script>
 
 <style lang="postcss">
+/*
+Common styles for all components (not scoped)
+*/
+
 .router-link {
   @apply inline-block px-16 py-4 transition-colors duration-500 cursor-pointer;
 }
@@ -38,15 +40,10 @@ export default Vue.extend({
   @apply bg-gray-500;
 }
 
-
-/*
-Common styles for all components (not scoped)
-*/
 h1 {
   @apply pt-4 pb-4 text-4xl font-bold text-center;
 }
 main {
   @apply text-lg text-center;
 }
-
 </style>
