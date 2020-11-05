@@ -14,3 +14,10 @@ Live URL: <a href="https://vue-todo.dfweb.no/">https://vue-todo.dfweb.no/</a>
 - Tailwind CSS
 - NuxtJS
 - Typescript
+
+## TODO
+
+- Implement more tests from <a href="https://vue-test-utils.vuejs.org/">https://vue-test-utils.vuejs.org/</a>
+- Play around with animations and add some animations?
+- Integrate state with a database like FaunaDB or Firebase
+- Add a custom favicon in /static folder

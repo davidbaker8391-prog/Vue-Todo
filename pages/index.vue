@@ -36,5 +36,17 @@ export default Vue.extend({
       this.$store.commit('deleteTodo', index)
     },
   },
+  head() {
+    return {
+      title: 'Vue TODO - Home',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Vue TODO application with Nuxt and Typescript',
+        },
+      ],
+    }
+  },
 })
 </script>
