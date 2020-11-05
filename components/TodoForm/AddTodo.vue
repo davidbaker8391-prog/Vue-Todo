@@ -26,6 +26,7 @@ export default Vue.extend({
     addTodo() {
       if (this.todoText.length > 0) {
         this.errorMessage = ''
+        this.todoText = ''
         this.$store.commit('addTodo', this.todoText)
       } else {
         this.errorMessage = 'Text needs to be longer!'
