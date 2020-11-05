@@ -1,3 +1,5 @@
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=w3bdesign_vue-todo&metric=alert_status)](https://sonarcloud.io/dashboard?id=w3bdesign_vue-todo)
+
 # TODO application with NuxtJS
 
 <img src="https://user-images.githubusercontent.com/45217974/98190523-802be000-1f17-11eb-9e17-db261fb71d3a.jpg" alt="Screenshot">
