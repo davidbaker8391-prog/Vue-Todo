@@ -9,4 +9,7 @@ export default {
   toggleDone(state: TTodos, index: number) {
     state.todos[index].done = !state.todos[index].done
   },
+  deleteTodo(state: TTodos, index: number) {
+    state.todos.splice(index, 1)
+  },
 }

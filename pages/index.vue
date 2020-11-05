@@ -16,7 +16,9 @@
               </div>
 
               <div class="space-x-2">
-                <button class="btn-error">Delete</button>
+                <button class="btn-error" @click="deleteTodo(index)">
+                  Delete
+                </button>
 
                 <button
                   v-if="!todo.done"
@@ -84,6 +86,9 @@ export default Vue.extend({
     },
     toggleDone(index: number) {
       this.$store.commit('toggleDone', index)
+    },
+    deleteTodo(index: number) {
+      this.$store.commit('deleteTodo', index)
     },
   },
 })

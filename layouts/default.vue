@@ -5,7 +5,6 @@
         <div class="container mx-auto">
           <div class="flex items-center">
             <router-link to="/" class="router-link">Home</router-link>
-            <router-link to="/todos" class="router-link">Todos</router-link>
           </div>
         </div>
       </header>
