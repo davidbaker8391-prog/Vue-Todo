@@ -45,4 +45,24 @@ h1 {
 main {
   @apply text-lg text-center;
 }
+
+/* 
+Button styles 
+*/
+
+button {
+  @apply mt-4 px-4 py-2 font-bold text-white rounded;
+}
+.btn-standard {
+  @apply bg-blue-500;
+}
+.btn-error {
+  @apply bg-red-500;
+}
+.btn-standard:hover {
+  @apply bg-blue-700;
+}
+.btn-error:hover {
+  @apply bg-red-700;
+}
 </style>
