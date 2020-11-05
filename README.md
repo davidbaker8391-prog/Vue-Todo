@@ -1,7 +1,12 @@
-# TODO application with Vue 3
+# TODO application with NuxtJS
+
+An application that demonstrates how you can create a TODO application with Nuxt, Tailwind CSS, Vuex and Typescript.
 
 ## Features
 
 - Vue router
-- Eslint with Airbnb
+- Vuex
+- Eslint
 - Tailwind CSS
+- NuxtJS
+- Typescript
