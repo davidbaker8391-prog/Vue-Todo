@@ -4,6 +4,8 @@
 
 An application that demonstrates how you can create a TODO application with Nuxt, Tailwind CSS, Vuex and Typescript.
 
+Live URL: <a href="https://vue-todo.dfweb.no/">https://vue-todo.dfweb.no/</a>
+
 ## Features
 
 - Vue router
