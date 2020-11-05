@@ -1,30 +1,12 @@
-<<<<<<< Updated upstream
-# TODO application with Vue 3
+# TODO application with NuxtJS
+
+An application that demonstrates how you can create a TODO application with Nuxt, Tailwind CSS, Vuex and Typescript.
 
 ## Features
 
 - Vue router
-- Eslint with Airbnb
+- Vuex
+- Eslint
 - Tailwind CSS
-=======
-# nuxt-todo
-
-## Build Setup
-
-```bash
-# install dependencies
-$ npm install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
->>>>>>> Stashed changes
+- NuxtJS
+- Typescript
