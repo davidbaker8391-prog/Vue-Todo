@@ -6,7 +6,7 @@
         <div class="grid grid-cols-6 gap-4">
           <div class="col-span-6 px-1 space-y-4">
             <div
-              v-for="(todo, index) in this.$store.state.todos"
+              v-for="(todo, index) in todos"
               :key="index"
               class="flex items-center justify-between p-4 bg-white rounded shadow-lg"
               :class="{ 'bg-green-300': todo.done }"
@@ -16,11 +16,11 @@
               </div>
 
               <div class="space-x-2">
-                <button class="btn-error" @click="deleteTodo">Delete</button>
+                <button class="btn-error">Delete</button>
                 <button
                   class="btn-standard"
                   title="Complete TODO"
-                  @click="toggleDone(index)"
+                  @click="jalla"
                 >
                   Complete
                 </button>
@@ -31,16 +31,18 @@
           <div class="col-span-6">
             <div class="p-8 bg-white rounded shadow-lg">
               <h2 class="text-xl">Add TODO</h2>
-              <input v-model="this.$store.todoText" type="text" />
-              <button class="block w-full btn-standard" @click="addTodo">
-                Add
-              </button>
-              <p
-                v-if="this.$store.state.errorMessage !== ''"
-                class="p-4 text-3xl text-red-500"
-              >
-                {{ this.$store.state.errorMessage }}
-              </p>
+              <form @submit.prevent="addTodo">
+                <input v-model="todoText" type="text" />
+                <button class="block w-full btn-standard" type="submit">
+                  Add
+                </button>
+                <p
+                  v-if="this.$store.state.errorMessage !== ''"
+                  class="p-4 text-3xl text-red-500"
+                >
+                  {{ this.$store.state.errorMessage }}
+                </p>
+              </form>
             </div>
           </div>
         </div>
@@ -54,12 +56,22 @@ import Vue from 'vue'
 
 export default Vue.extend({
   data() {
-    return { message: 'Dette er en test' }
+    const todoText = ''
+    return { todoText }
+  },
+  computed: {
+    todos() {
+      return this.$store.state.todos
+    },
   },
   methods: {
+    jalla() {
+      this.$store.commit('test')
+    },
     addTodo() {
-      if (this.$store.state.todoText) {
-        alert('Todo text!')
+      // console.log(todoText)
+      if (this.todoText) {
+        this.$store.commit('addTodo', this.todoText)
       }
     },
   },
