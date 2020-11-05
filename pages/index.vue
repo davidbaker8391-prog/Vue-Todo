@@ -17,12 +17,23 @@
 
               <div class="space-x-2">
                 <button class="btn-error">Delete</button>
+
                 <button
+                  v-if="!todo.done"
                   class="btn-standard"
                   title="Complete TODO"
-                  @click="jalla"
+                  @click="toggleDone(index)"
                 >
                   Complete
+                </button>
+
+                <button
+                  v-else
+                  class="btn-standard"
+                  title="Uncomplete TODO"
+                  @click="toggleDone(index)"
+                >
+                  Uncomplete
                 </button>
               </div>
             </div>
@@ -36,11 +47,8 @@
                 <button class="block w-full btn-standard" type="submit">
                   Add
                 </button>
-                <p
-                  v-if="this.$store.state.errorMessage !== ''"
-                  class="p-4 text-3xl text-red-500"
-                >
-                  {{ this.$store.state.errorMessage }}
+                <p v-if="errorMessage !== ''" class="p-4 text-3xl text-red-500">
+                  {{ errorMessage }}
                 </p>
               </form>
             </div>
@@ -57,7 +65,8 @@ import Vue from 'vue'
 export default Vue.extend({
   data() {
     const todoText = ''
-    return { todoText }
+    const errorMessage = ''
+    return { todoText, errorMessage }
   },
   computed: {
     todos() {
@@ -65,14 +74,16 @@ export default Vue.extend({
     },
   },
   methods: {
-    jalla() {
-      this.$store.commit('test')
-    },
     addTodo() {
-      // console.log(todoText)
-      if (this.todoText) {
+      if (this.todoText.length > 0) {
+        this.errorMessage = ''
         this.$store.commit('addTodo', this.todoText)
+      } else {
+        this.errorMessage = 'Text needs to be longer!'
       }
+    },
+    toggleDone(index: number) {
+      this.$store.commit('toggleDone', index)
     },
   },
 })
