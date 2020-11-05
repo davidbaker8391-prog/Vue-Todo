@@ -1,9 +1,9 @@
-export default {
-  addTodo(state: any, payload: any) {
-    state.todos.push({ name: payload, done: false })
+type TTodos = {
+  todos: { name: string; done: boolean }[]
+}
 
-    //console.log('Mutation called')
-    //console.log(state)
-    // console.log(payload)
+export default {
+  addTodo(state: TTodos, payload: string) {
+    state.todos.push({ name: payload, done: false })
   },
 }
