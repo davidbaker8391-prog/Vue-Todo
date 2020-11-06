@@ -4,16 +4,14 @@
       <h2 class="text-xl">Add TODO</h2>
       <form @submit.prevent="addTodo">
         <input v-model="todoText" type="text" />
-        <button class="block w-64 mx-auto btn-standard" type="submit">
+        <button
+          class="submit-button"
+          type="submit"
+          :class="{ disabledButton: disableSubmit }"
+          :disabled="disableSubmit"
+        >
           Add
         </button>
-        <p
-          v-if="errorMessage !== ''"
-          class="error animated"
-          :class="{ fadeInUp: errorMessage !== '' }"
-        >
-          {{ errorMessage }}
-        </p>
       </form>
     </div>
   </div>
@@ -26,18 +24,19 @@ import 'vue2-animate/dist/vue2-animate.min.css'
 
 export default Vue.extend({
   data() {
-    const todoText = ''
-    const errorMessage = ''
-    return { todoText, errorMessage }
+    const todoText: String = ''
+    return { todoText }
+  },
+  computed: {
+    disableSubmit(): Boolean {
+      return this.todoText === ''
+    },
   },
   methods: {
     addTodo() {
       if (this.todoText.length > 0) {
         this.$store.commit('addTodo', this.todoText)
-        this.errorMessage = ''
         this.todoText = ''
-      } else {
-        this.errorMessage = 'Text needs to be longer!'
       }
     },
   },
@@ -45,8 +44,16 @@ export default Vue.extend({
 </script>
 
 <style lang="postcss" scoped>
-.error {
-  @apply p-4 text-3xl text-red-500;
+.disabledButton {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+.btn-standard {
+  @apply bg-blue-500;
+}
+
+.submit-button {
+  @apply block w-64 mx-auto btn-standard;
 }
 
 input {
