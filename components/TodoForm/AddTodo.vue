@@ -4,8 +4,14 @@
       <h2 class="text-xl">Add TODO</h2>
       <form @submit.prevent="addTodo">
         <input v-model="todoText" type="text" />
-        <button class="block w-full btn-standard" type="submit">Add</button>
-        <p v-if="errorMessage !== ''" class="p-4 text-3xl text-red-500">
+        <button class="block w-64 mx-auto btn-standard" type="submit">
+          Add
+        </button>
+        <p
+          v-if="errorMessage !== ''"
+          class="error animated"
+          :class="{ fadeInUp: errorMessage !== '' }"
+        >
           {{ errorMessage }}
         </p>
       </form>
@@ -15,6 +21,8 @@
 
 <script lang="ts">
 import Vue from 'vue'
+
+import 'vue2-animate/dist/vue2-animate.min.css'
 
 export default Vue.extend({
   data() {
@@ -37,6 +45,10 @@ export default Vue.extend({
 </script>
 
 <style lang="postcss" scoped>
+.error {
+  @apply p-4 text-3xl text-red-500;
+}
+
 input {
   @apply w-full p-2 mt-4 border rounded;
 }

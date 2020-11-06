@@ -1,13 +1,12 @@
 <template>
   <div>
-    <transition-group name="fadeLeft" tag="div">
+    <transition-group name="list-complete" mode="out-in" tag="div">
       <div
         v-for="(todo, index) in todos"
         :key="todo.id"
-        class="flex items-center justify-between p-4 mt-4 bg-white rounded shadow-lg"
+        class="flex items-center justify-between p-4 mt-4 bg-white rounded shadow-lg list-complete-item"
         :class="{ 'bg-green-300': todo.done }"
       >
-        <span>{{ todo.id }} - </span>
         <span>{{ todo.name }}</span>
 
         <div class="space-x-2">
@@ -39,6 +38,8 @@
 <script lang="ts">
 import Vue from 'vue'
 
+import 'vue2-animate/dist/vue2-animate.min.css'
+
 export default Vue.extend({
   props: {
     todos: { type: Array, default: null },
@@ -55,3 +56,19 @@ export default Vue.extend({
   },
 })
 </script>
+
+<style scoped>
+.list-complete-item {
+  transition: all 0.5s;
+  display: inline-block;
+  width: 100%;
+}
+.list-complete-enter,
+.list-complete-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.list-complete-leave-active {
+  position: absolute;
+}
+</style>
