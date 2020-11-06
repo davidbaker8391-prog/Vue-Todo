@@ -1,10 +1,12 @@
+import { uid } from 'uid'
+
 type TTodos = {
-  todos: { name: string; done: boolean }[]
+  todos: { id: string; name: string; done: boolean }[]
 }
 
 export default {
   addTodo(state: TTodos, payload: string) {
-    state.todos.push({ name: payload, done: false })
+    state.todos.push({ id: uid(), name: payload, done: false })
   },
   toggleDone(state: TTodos, index: number) {
     state.todos[index].done = !state.todos[index].done
