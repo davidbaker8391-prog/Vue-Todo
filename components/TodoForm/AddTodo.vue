@@ -12,13 +12,6 @@
         >
           Add
         </button>
-        <p
-          v-if="errorMessage !== ''"
-          class="error animated"
-          :class="{ fadeInUp: errorMessage !== '' }"
-        >
-          {{ errorMessage }}
-        </p>
       </form>
     </div>
   </div>
@@ -31,9 +24,8 @@ import 'vue2-animate/dist/vue2-animate.min.css'
 
 export default Vue.extend({
   data() {
-    const todoText = ''
-    const errorMessage = ''
-    return { todoText, errorMessage }
+    const todoText: String = ''
+    return { todoText }
   },
   computed: {
     disableSubmit(): Boolean {
@@ -44,10 +36,7 @@ export default Vue.extend({
     addTodo() {
       if (this.todoText.length > 0) {
         this.$store.commit('addTodo', this.todoText)
-        this.errorMessage = ''
         this.todoText = ''
-      } else {
-        this.errorMessage = 'Text needs to be longer!'
       }
     },
   },
@@ -57,9 +46,6 @@ export default Vue.extend({
 <style lang="postcss" scoped>
 .disabledButton {
   @apply opacity-50 cursor-not-allowed;
-}
-.error {
-  @apply p-4 text-3xl text-red-500;
 }
 
 .btn-standard {
