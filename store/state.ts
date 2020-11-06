@@ -1,5 +1,7 @@
+import { uid } from 'uid'
+
 export default () => ({
   todoText: '',
   errorMessage: '',
-  todos: [{ name: 'Test 1', done: false }],
+  todos: [{ id: uid(), name: 'My First Todo', done: false }],
 })

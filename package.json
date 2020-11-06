@@ -1,6 +1,6 @@
 {
   "name": "nuxt-todo",
-  "version": "1.0.4",
+  "version": "1.0.3",
   "private": true,
   "scripts": {
     "dev": "nuxt-ts",
@@ -14,7 +14,9 @@
   "dependencies": {
     "@nuxt/typescript-runtime": "^2.0.0",
     "core-js": "^3.6.5",
-    "nuxt": "^2.14.7"
+    "nuxt": "^2.14.7",
+    "uid": "^2.0.0",
+    "vue2-animate": "^2.1.4"
   },
   "devDependencies": {
     "@nuxt/types": "^2.14.7",
