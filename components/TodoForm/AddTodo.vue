@@ -7,8 +7,8 @@
         <button
           class="submit-button"
           type="submit"
-          :class="{ disabledButton: todoText === '' }"
-          :disabled="todoText === ''"
+          :class="{ disabledButton: disableSubmit }"
+          :disabled="disableSubmit"
         >
           Add
         </button>
@@ -34,6 +34,11 @@ export default Vue.extend({
     const todoText = ''
     const errorMessage = ''
     return { todoText, errorMessage }
+  },
+  computed: {
+    disableSubmit(): Boolean {
+      return this.todoText === ''
+    },
   },
   methods: {
     addTodo() {
