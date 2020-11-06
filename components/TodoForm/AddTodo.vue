@@ -4,7 +4,12 @@
       <h2 class="text-xl">Add TODO</h2>
       <form @submit.prevent="addTodo">
         <input v-model="todoText" type="text" />
-        <button class="block w-64 mx-auto btn-standard" type="submit">
+        <button
+          class="submit-button"
+          type="submit"
+          :class="{ disabledButton: todoText === '' }"
+          :disabled="todoText === ''"
+        >
           Add
         </button>
         <p
@@ -45,8 +50,19 @@ export default Vue.extend({
 </script>
 
 <style lang="postcss" scoped>
+.disabledButton {
+  @apply opacity-50 cursor-not-allowed;
+}
 .error {
   @apply p-4 text-3xl text-red-500;
+}
+
+.btn-standard {
+  @apply bg-blue-500;
+}
+
+.submit-button {
+  @apply block w-64 mx-auto btn-standard;
 }
 
 input {
