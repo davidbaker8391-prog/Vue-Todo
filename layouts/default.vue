@@ -17,7 +17,6 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'Header',
   watch: {
     $route(to) {
       document.title = to.meta.title || 'Your Website'

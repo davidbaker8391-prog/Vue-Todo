@@ -19,8 +19,6 @@
 <script lang="ts">
 import Vue from 'vue'
 
-import 'vue2-animate/dist/vue2-animate.min.css'
-
 import '@/components/TodoForm/ListTodos'
 import '@/components/TodoForm/AddTodo'
 
