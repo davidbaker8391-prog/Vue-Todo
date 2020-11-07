@@ -38,8 +38,6 @@
 <script lang="ts">
 import Vue from 'vue'
 
-import 'vue2-animate/dist/vue2-animate.min.css'
-
 export default Vue.extend({
   props: {
     todos: { type: Array, default: null },
