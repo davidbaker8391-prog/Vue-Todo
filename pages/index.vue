@@ -19,10 +19,19 @@
 <script lang="ts">
 import Vue from 'vue'
 
-import '@/components/TodoForm/ListTodos'
-import '@/components/TodoForm/AddTodo'
-
 export default Vue.extend({
+  head() {
+    return {
+      title: 'Vue TODO - Home',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Vue TODO application with Nuxt and Typescript',
+        },
+      ],
+    }
+  },
   computed: {
     todos() {
       return this.$store.state.todos
@@ -35,18 +44,6 @@ export default Vue.extend({
     deleteTodo(index: number) {
       this.$store.commit('deleteTodo', index)
     },
-  },
-  head() {
-    return {
-      title: 'Vue TODO - Home',
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'Vue TODO application with Nuxt and Typescript',
-        },
-      ],
-    }
   },
 })
 </script>
