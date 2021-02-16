@@ -11,7 +11,7 @@ Live URL: <a href="https://vue-todo.dfweb.no/">https://vue-todo.dfweb.no/</a>
 
 ## Features
 
-- Vue router
+- Vue Router
 - Vuex
 - Eslint
 - Tailwind CSS
