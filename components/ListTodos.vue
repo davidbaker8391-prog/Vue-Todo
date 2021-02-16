@@ -11,7 +11,6 @@
 
         <div class="space-x-2">
           <button class="btn-error" @click="deleteTodo(index)">Delete</button>
-
           <button
             v-if="!todo.done"
             class="btn-standard"
