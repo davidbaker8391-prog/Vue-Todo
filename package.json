@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@nuxt/typescript-runtime": "^2.0.1",
-    "core-js": "^3.8.3",
+    "core-js": "^3.9.0",
     "nuxt": "^2.15.0",
     "uid": "^2.0.0",
     "vue2-animate": "^2.1.4"
