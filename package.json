@@ -3,10 +3,10 @@
   "version": "1.0.7",
   "private": true,
   "scripts": {
-    "dev": "nuxt-ts",
-    "build": "nuxt-ts build",
-    "start": "nuxt-ts start",
-    "generate": "nuxt-ts generate",
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore . --fix",
     "lint": "npm run lint:js",
     "test": "jest",
@@ -14,7 +14,6 @@
     "refresh": "rm -rf node_modules && rm package-lock.json && npm i && npm run format"
   },
   "dependencies": {
-    "@nuxt/typescript-runtime": "^2.1.0",
     "core-js": "^3.22.2",
     "nuxt": "^2.15.8",
     "uid": "^2.0.0",
