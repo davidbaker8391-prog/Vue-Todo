@@ -1,6 +1,6 @@
 {
   "name": "nuxt-todo",
-  "version": "1.0.7",
+  "version": "1.0.3",
   "private": true,
   "scripts": {
     "dev": "nuxt",
