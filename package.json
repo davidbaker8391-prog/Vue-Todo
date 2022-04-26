@@ -1,6 +1,6 @@
 {
   "name": "nuxt-todo",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "private": true,
   "scripts": {
     "dev": "nuxt-ts",
@@ -9,11 +9,13 @@
     "generate": "nuxt-ts generate",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore . --fix",
     "lint": "npm run lint:js",
-    "test": "jest"
+    "test": "jest",
+    "format": "prettier --write \"**/*.{vue,ts,json}\"",
+    "refresh": "rm -rf node_modules && rm package-lock.json && npm i && npm run format"
   },
   "dependencies": {
     "@nuxt/typescript-runtime": "^2.1.0",
-    "core-js": "^3.22.1",
+    "core-js": "^3.22.2",
     "nuxt": "^2.15.8",
     "uid": "^2.0.0",
     "vue2-animate": "^2.1.4"
@@ -21,21 +23,20 @@
   "devDependencies": {
     "@nuxt/types": "^2.15.8",
     "@nuxt/typescript-build": "^2.1.0",
-    "@nuxtjs/eslint-config": "^6.0.1",
-    "@nuxtjs/eslint-config-typescript": "^6.0.1",
+    "@nuxtjs/eslint-config": "^9.0.0",
+    "@nuxtjs/eslint-config-typescript": "^9.0.0",
     "@nuxtjs/eslint-module": "^3.1.0",
     "@nuxtjs/tailwindcss": "^5.0.3",
     "@vue/test-utils": "^1.3.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
-    "babel-jest": "^27.5.1",
-    "eslint": "^7.32.0",
+    "babel-jest": "^28.0.1",
+    "eslint": "^8.14.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-nuxt": "^3.2.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "jest": "^26.6.3",
+    "jest": "^28.0.1",
     "prettier": "^2.6.2",
-    "ts-jest": "^26.5.6",
     "vue-jest": "^3.0.7"
   }
 }
