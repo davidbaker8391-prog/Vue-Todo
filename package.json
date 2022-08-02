@@ -14,7 +14,7 @@
     "refresh": "rm -rf node_modules && rm package-lock.json && npm i && npm run format"
   },
   "dependencies": {
-    "core-js": "^3.23.3",
+    "core-js": "^3.24.1",
     "nuxt": "^2.15.8",
     "uid": "^2.0.0",
     "vue2-animate": "^2.1.4"
