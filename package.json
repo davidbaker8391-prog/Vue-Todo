@@ -14,7 +14,7 @@
     "refresh": "rm -rf node_modules && rm package-lock.json && npm i && npm run format"
   },
   "dependencies": {
-    "core-js": "^3.25.2",
+    "core-js": "^3.25.5",
     "nuxt": "^2.15.8",
     "uid": "^2.0.1",
     "vue2-animate": "^2.1.4"
@@ -25,12 +25,11 @@
     "@nuxtjs/eslint-config": "^11.0.0",
     "@nuxtjs/eslint-config-typescript": "^11.0.0",
     "@nuxtjs/eslint-module": "^3.1.0",
-    "@nuxtjs/tailwindcss": "^5.3.3",
-    "@vue/test-utils": "^2.0.2",
+    "@nuxtjs/tailwindcss": "^5.3.5",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
-    "babel-jest": "^29.0.3",
-    "eslint": "^8.24.0",
+    "babel-jest": "^29.1.2",
+    "eslint": "^8.25.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-prettier": "^4.2.1",
